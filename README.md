@@ -1,4 +1,4 @@
-# TwilioConnector
+# GoogleAuthenticator Connector
  
 ## Introduction
 
