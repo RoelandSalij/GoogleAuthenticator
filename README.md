@@ -9,9 +9,10 @@ This connector enables you to implement validation of Google Authenticator gener
 You need to generate a secret key using this module, and store/associate it with your users. You can validate Google Authenticator generated validation codes.
 
 ### Create credentials
-
+![Create credentials][1]
 
 ### Validate code
+![Validate code][2]
 
 ## Development
 
@@ -36,3 +37,5 @@ This connector is licensed under the Apache v2 license.
 ## Copyright & Disclaimer GoogleAuth java library
 Please find the Copyright notice in the disclaimer on https://github.com/wstrange/GoogleAuth/ or in the GoogleAuthenticator module.
 
+  [1]: https://github.com/RoelandSalij/GoogleAuthenticator/docs/images/CreateCredentials.PNG
+  [2]: https://github.com/RoelandSalij/GoogleAuthenticator/docs/images/ValidateUserInput.PNG
