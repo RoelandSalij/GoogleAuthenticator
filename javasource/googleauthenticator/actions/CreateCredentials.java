@@ -9,13 +9,12 @@
 
 package googleauthenticator.actions;
 
-import test.proxies.Credential;
 import com.mendix.systemwideinterfaces.core.IContext;
+import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.webui.CustomJavaAction;
 import com.warrenstrange.googleauth.GoogleAuthenticator;
 import com.warrenstrange.googleauth.GoogleAuthenticatorKey;
 import com.warrenstrange.googleauth.GoogleAuthenticatorQRGenerator;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
 
 /**
  * This action generates a secret key and the URL to scan a QR code in the Google Authenticator app.
