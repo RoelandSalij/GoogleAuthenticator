@@ -10,7 +10,6 @@
 package googleauthenticator.actions;
 
 import java.util.concurrent.TimeUnit;
-
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.warrenstrange.googleauth.GoogleAuthenticator;

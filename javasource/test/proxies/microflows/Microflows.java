@@ -14,13 +14,40 @@ import com.mendix.systemwideinterfaces.core.IContext;
 public class Microflows
 {
 	// These are the microflows for the Test module
-	public static void iVK_IsCodeValid(IContext context, test.proxies.ValidityCheck _validityCheck)
+	public static boolean createCredentials(IContext context, test.proxies.Credential _newCredentialsObject)
+	{
+		try
+		{
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("NewCredentialsObject", _newCredentialsObject == null ? null : _newCredentialsObject.getMendixObject());
+			return (Boolean)Core.execute(context, "Test.CreateCredentials", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void iVK_CheckUserInput(IContext context, test.proxies.ValidityCheck _validityCheck)
 	{
 		try
 		{
 			Map<String, Object> params = new HashMap<String, Object>();
 			params.put("ValidityCheck", _validityCheck == null ? null : _validityCheck.getMendixObject());
-			Core.execute(context, "Test.IVK_IsCodeValid", params);
+			Core.execute(context, "Test.IVK_CheckUserInput", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static boolean iVK_IsCodeValid(IContext context, String _inputValueFromUser, String _secretKey)
+	{
+		try
+		{
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("InputValueFromUser", _inputValueFromUser);
+			params.put("SecretKey", _secretKey);
+			return (Boolean)Core.execute(context, "Test.IVK_IsCodeValid", params);
 		}
 		catch (CoreException e)
 		{
