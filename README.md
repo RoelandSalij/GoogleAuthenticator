@@ -31,6 +31,9 @@ This connector enables you to
 
 ![Validate code][2]
 
+## Know issues
+A time difference between server and a device providing validation codes causes issues.
+
 ## Collaboration on this connector
 
 Development of this connector is done through a git project on Github.
