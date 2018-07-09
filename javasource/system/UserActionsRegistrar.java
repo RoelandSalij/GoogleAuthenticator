@@ -38,9 +38,6 @@ public class UserActionsRegistrar implements EventHandler
 		{
 			component = mxRuntime.getMainComponent();
 			Core.initialize(component, integration);   
-			component.actionRegistry().registerUserAction(appcloudservices.actions.GenerateRandomPassword.class);
-			component.actionRegistry().registerUserAction(appcloudservices.actions.LogOutUser.class);
-			component.actionRegistry().registerUserAction(appcloudservices.actions.StartSignOnServlet.class);
 			component.actionRegistry().registerUserAction(googleauthenticator.actions.CreateCredentials.class);
 			component.actionRegistry().registerUserAction(googleauthenticator.actions.IsCodeValid.class);
 			component.actionRegistry().registerUserAction(system.actions.VerifyPassword.class);

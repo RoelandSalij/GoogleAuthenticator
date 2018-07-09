@@ -11,7 +11,7 @@ This connector enables you to
  
 ### Create credentials
  
- - Create a 'credentials' entity which is associated to your users to store the secret key and url for the QR code. Don't forget to set your entity access rules appropriately! Only your applications business logic should be able to read the secret key. Only users should be able to read the QR code url associated to them. 
+ - Create a 'credentials' entity which is associated to your users to store the secret key and url for the QR code. Don't forget to set your entity access rules appropriately! Only your applications business logic should be able to read the secret key. It is adviced to store the image from the URL, and provide that image to the user. Only users should be able to view the QR code url associated to them. Clean up the used images.
 
  - Create a microflow which receives your 'credentials' entity and passes it as a parameter to the 'Google Authenticator Connector - Create user credentials' action. The action only sets the attributes in your entity so you need to commit the entity yourself. (This way you're free in how you take care of your entities and storing of objects). 
  
@@ -29,24 +29,20 @@ This connector enables you to
 
 - The result of this authentication (boolean) can be used in any way you like.
 
+- Since TOTP passwords are time-based, it is essential that the clock of both the server and the client are synchronised within the tolerance used by the library (30 seconds by default).
+
 ![Validate code][2]
 
-## Know issues
-A time difference between server and a device providing validation codes causes issues.
+
+## Dependencies
+
+- googleauth-1.1.4.jar
+- commons-codec-1.11.jar
+- httpclient-4.5.6.jar
 
 ## Collaboration on this connector
 
 Development of this connector is done through a git project on Github.
-
-All java jar dependencies are managed using an ivy file. You can download all
-dependencies by running runivy.cmd. This will save all jars in the userlib folder. There are two different
-scripts to run ivy:
-* runivy.cmd - downloads all dependencies required for running and testing the project
-* runivy-export.cmd - downloads only the dependencies required for distributing the connector mpk.
-
-Before you start to develop the connector you need to run runivy.cmd. After you validate everything works, run runivy-export.cmd.
-This will delete all jars in the userlib folder and only download the jars required for creating the connector mpk.
-
 
 This connector uses the GoogleAuth library. https://github.com/wstrange/GoogleAuth/
 

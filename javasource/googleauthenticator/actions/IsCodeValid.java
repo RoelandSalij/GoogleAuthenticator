@@ -34,7 +34,7 @@ public class IsCodeValid extends CustomJavaAction<Boolean>
 		GoogleAuthenticatorConfigBuilder gacb =
                 new GoogleAuthenticatorConfigBuilder()
                         .setTimeStepSizeInMillis(TimeUnit.SECONDS.toMillis(30))
-                        .setWindowSize(5);
+                        .setWindowSize(1);
         GoogleAuthenticator ga = new GoogleAuthenticator(gacb.build());
 
         int validationCodeNr = Integer.parseInt(ValidationCode.replace(" ", ""));

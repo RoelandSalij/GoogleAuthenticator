@@ -1,9 +1,9 @@
 .idea
 deployment
-userlib/*
 .classpath
 .project
 *.bak
 *.lock
 *.launch
 .settings/
+.gradle/
