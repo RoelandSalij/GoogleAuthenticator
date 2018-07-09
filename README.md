@@ -11,7 +11,9 @@ This connector enables you to
  
 ### Create credentials
  
- - Create a 'credentials' entity which is associated to your users to store the secret key and url for the QR code. Don't forget to set your entity access rules appropriately! Only your applications business logic should be able to read the secret key. It is adviced to store the image from the URL, and provide that image to the user. Only users should be able to view the QR code url associated to them. Clean up the used images.
+ - Create a 'credentials' entity which is associated to your users to store the secret key. Don't forget to set your entity access rules appropriately! Only your applications business logic should be able to read the secret key. 
+
+ - Use a QR code image generator from the Mendix App Store to create a QR code image.
 
  - Create a microflow which receives your 'credentials' entity and passes it as a parameter to the 'Google Authenticator Connector - Create user credentials' action. The action only sets the attributes in your entity so you need to commit the entity yourself. (This way you're free in how you take care of your entities and storing of objects). 
  

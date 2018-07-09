@@ -51,10 +51,11 @@ public class CreateCredentials extends CustomJavaAction<Boolean>
 		GoogleAuthenticator gAuth = new GoogleAuthenticator();
 		final GoogleAuthenticatorKey key = gAuth.createCredentials();
 		
-		String otpAuthURL = GoogleAuthenticatorQRGenerator.getOtpAuthURL(this.ApplicationName, this.UserName, key);
+//		convenient function for testing purposes
+//		String otpAuthURL = GoogleAuthenticatorQRGenerator.getOtpAuthURL(this.ApplicationName, this.UserName, key);
 		
 		CredentialsToSet.setValue(getContext(), "ga_SecretKey", key.getKey());	
-		CredentialsToSet.setValue(getContext(), "ga_OtpAuthURL", otpAuthURL);
+//		CredentialsToSet.setValue(getContext(), "ga_OtpAuthURL", otpAuthURL);
 		
 		return true;
 		// END USER CODE
