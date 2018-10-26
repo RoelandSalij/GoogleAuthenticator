@@ -14,13 +14,13 @@ import com.mendix.systemwideinterfaces.core.IContext;
 public class Microflows
 {
 	// These are the microflows for the Test module
-	public static boolean createCredentials(IContext context, test.proxies.Credential _newCredentialsObject)
+	public static String createCredentials(IContext context, test.proxies.Credential _newCredentialsObject)
 	{
 		try
 		{
 			Map<String, Object> params = new HashMap<String, Object>();
 			params.put("NewCredentialsObject", _newCredentialsObject == null ? null : _newCredentialsObject.getMendixObject());
-			return (Boolean)Core.execute(context, "Test.CreateCredentials", params);
+			return (String)Core.execute(context, "Test.CreateCredentials", params);
 		}
 		catch (CoreException e)
 		{

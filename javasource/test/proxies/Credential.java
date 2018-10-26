@@ -21,8 +21,7 @@ public class Credential
 	public enum MemberNames
 	{
 		User("User"),
-		ga_SecretKey("ga_SecretKey"),
-		ga_OtpAuthURL("ga_OtpAuthURL");
+		ga_SecretKey("ga_SecretKey");
 
 		private java.lang.String metaName;
 
@@ -187,42 +186,6 @@ public class Credential
 	public final void setga_SecretKey(com.mendix.systemwideinterfaces.core.IContext context, String ga_secretkey)
 	{
 		getMendixObject().setValue(context, MemberNames.ga_SecretKey.toString(), ga_secretkey);
-	}
-
-	/**
-	 * @return value of ga_OtpAuthURL
-	 */
-	public final String getga_OtpAuthURL()
-	{
-		return getga_OtpAuthURL(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of ga_OtpAuthURL
-	 */
-	public final String getga_OtpAuthURL(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (String) getMendixObject().getValue(context, MemberNames.ga_OtpAuthURL.toString());
-	}
-
-	/**
-	 * Set value of ga_OtpAuthURL
-	 * @param ga_otpauthurl
-	 */
-	public final void setga_OtpAuthURL(String ga_otpauthurl)
-	{
-		setga_OtpAuthURL(getContext(), ga_otpauthurl);
-	}
-
-	/**
-	 * Set value of ga_OtpAuthURL
-	 * @param context
-	 * @param ga_otpauthurl
-	 */
-	public final void setga_OtpAuthURL(com.mendix.systemwideinterfaces.core.IContext context, String ga_otpauthurl)
-	{
-		getMendixObject().setValue(context, MemberNames.ga_OtpAuthURL.toString(), ga_otpauthurl);
 	}
 
 	/**
