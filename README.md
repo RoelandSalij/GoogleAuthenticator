@@ -2,24 +2,22 @@
  
 ## Introduction
 
-This connector enables you to 
-	- generate secret keys and Qr codes for users to register an application in the Google Authenticator app on their device.
-	- implement validation of Google Authenticator codes being generated on the device of a user.
+This connector enables you to generate a secret key and a otp authentication URL to register an application in the Google Authenticator app on the device of a user. Furthermore, you can use a validation action to validate codes being generated on the device of a user with a secret key.
 
 ## Configuration
  ![Available actions][3] 
  
 ### Create credentials
  
- - Create a 'credentials' entity which is associated to your users to store the secret key. Don't forget to set your entity access rules appropriately! Only your applications business logic should be able to read the secret key. 
+ - Create a 'credentials' entity which contains or is associated with a user to store the secret key. Don't forget to set your entity access rules appropriately! Only the business logic of your app should be able to read the secret key. 
 
- - Use a QR code image generator from the Mendix App Store to create a QR code image.
+ - Use a QR code viewer from the Mendix App Store to view the generate otp authentication URL.
 
- - Create a microflow which receives your 'credentials' entity and passes it as a parameter to the 'Google Authenticator Connector - Create user credentials' action. The action only sets the attributes in your entity so you need to commit the entity yourself. (This way you're free in how you take care of your entities and storing of objects). 
+ - Create a microflow which receives your 'credentials' entity and passes it as a parameter to the 'Google Authenticator Connector - Create user credentials' action. The action only changes the 'ga_SecretKey' attribute in your entity so you need to commit the entity yourself. (This way you're free in how you take care of your entities and storing of objects). 
  
- - The 'Google Authenticator Connector - Create user credentials' also requires a username and the name of your application. These values will be reflected in Googles 'Google Authenticator' app on the device of the user, so the user knows which code belongs to an application.
+ - The 'Google Authenticator Connector - Create user credentials' also requires a username and the name of your application(issuer). These values will be reflected in Googles 'Google Authenticator' app on the device of the user, so the user knows which code belongs to an application.
  
- - Create a page which shows the QR-code to your user. You can use the ImageViewer widget from the App Store for this, for example. It's recommended to show the QR code to the user just once and remove the value completely from your database afterwards.
+ - Create a page which shows the otp authentication URL as a QR-code to your user. You can use the ImageViewer widget from the App Store for this, for example. It's recommended to show the QR code to the user just once and to not store the value in the database.
   
 ![Create credentials][1]
 
@@ -35,6 +33,9 @@ This connector enables you to
 
 ![Validate code][2]
 
+
+## Example
+The GitHub project of this module contains a working example.
 
 ## Dependencies
 
@@ -55,6 +56,6 @@ This connector is licensed under the Apache v2 license.
 ## Copyright & Disclaimer GoogleAuth java library
 Please find the Copyright notice in the disclaimer on https://github.com/wstrange/GoogleAuth/ or in the GoogleAuthenticator module.
 
-  [1]: https://raw.githubusercontent.com/RoelandSalij/GoogleAuthenticator/master/docs/images/CreateCredentials.PNG
+  
   [2]: https://raw.githubusercontent.com/RoelandSalij/GoogleAuthenticator/master/docs/images/ValidateUserInput.PNG
   [3]: https://raw.githubusercontent.com/RoelandSalij/GoogleAuthenticator/master/docs/images/Actions.PNG
