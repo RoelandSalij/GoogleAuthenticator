@@ -56,6 +56,6 @@ This connector is licensed under the Apache v2 license.
 ## Copyright & Disclaimer GoogleAuth java library
 Please find the Copyright notice in the disclaimer on https://github.com/wstrange/GoogleAuth/ or in the GoogleAuthenticator module.
 
-  
+  [2]: https://raw.githubusercontent.com/RoelandSalij/GoogleAuthenticator/master/docs/images/CreateCredentials.PNG
   [2]: https://raw.githubusercontent.com/RoelandSalij/GoogleAuthenticator/master/docs/images/ValidateUserInput.PNG
   [3]: https://raw.githubusercontent.com/RoelandSalij/GoogleAuthenticator/master/docs/images/Actions.PNG
