@@ -39,9 +39,9 @@ The GitHub project of this module contains a working example.
 
 ## Dependencies
 
-- googleauth-1.1.4.jar
-- commons-codec-1.11.jar
-- httpclient-4.5.6.jar
+- googleauth-1.5.0.jar
+- commons-codec-1.15.jar
+- httpclient-4.5.13.jar
 
 ## Collaboration on this connector
 

@@ -15,20 +15,20 @@ import com.mendix.webui.CustomJavaAction;
 import com.warrenstrange.googleauth.GoogleAuthenticator;
 import com.warrenstrange.googleauth.GoogleAuthenticatorConfig.GoogleAuthenticatorConfigBuilder;
 
-public class IsCodeValid extends CustomJavaAction<Boolean>
+public class IsCodeValid extends CustomJavaAction<java.lang.Boolean>
 {
-	private String SecretKey;
-	private String ValidationCode;
+	private java.lang.String SecretKey;
+	private java.lang.String ValidationCode;
 
-	public IsCodeValid(IContext context, String SecretKey, String ValidationCode)
+	public IsCodeValid(IContext context, java.lang.String SecretKey, java.lang.String ValidationCode)
 	{
 		super(context);
 		this.SecretKey = SecretKey;
 		this.ValidationCode = ValidationCode;
 	}
 
-	@Override
-	public Boolean executeAction() throws Exception
+	@java.lang.Override
+	public java.lang.Boolean executeAction() throws Exception
 	{
 		// BEGIN USER CODE
 		GoogleAuthenticatorConfigBuilder gacb =
@@ -47,8 +47,8 @@ public class IsCodeValid extends CustomJavaAction<Boolean>
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
-	public String toString()
+	@java.lang.Override
+	public java.lang.String toString()
 	{
 		return "IsCodeValid";
 	}

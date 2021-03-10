@@ -30,7 +30,7 @@ public class Credential
 			metaName = s;
 		}
 
-		@Override
+		@java.lang.Override
 		public java.lang.String toString()
 		{
 			return metaName;
@@ -56,7 +56,7 @@ public class Credential
 	/**
 	 * @deprecated Use 'Credential.load(IContext, IMendixIdentifier)' instead.
 	 */
-	@Deprecated
+	@java.lang.Deprecated
 	public static test.proxies.Credential initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return test.proxies.Credential.load(context, mendixIdentifier);
@@ -64,7 +64,7 @@ public class Credential
 
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
-	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
+	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
 	 */
 	public static test.proxies.Credential initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -119,7 +119,7 @@ public class Credential
 	/**
 	 * @return value of User
 	 */
-	public final String getUser()
+	public final java.lang.String getUser()
 	{
 		return getUser(getContext());
 	}
@@ -128,16 +128,16 @@ public class Credential
 	 * @param context
 	 * @return value of User
 	 */
-	public final String getUser(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getUser(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.User.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.User.toString());
 	}
 
 	/**
 	 * Set value of User
 	 * @param user
 	 */
-	public final void setUser(String user)
+	public final void setUser(java.lang.String user)
 	{
 		setUser(getContext(), user);
 	}
@@ -147,7 +147,7 @@ public class Credential
 	 * @param context
 	 * @param user
 	 */
-	public final void setUser(com.mendix.systemwideinterfaces.core.IContext context, String user)
+	public final void setUser(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String user)
 	{
 		getMendixObject().setValue(context, MemberNames.User.toString(), user);
 	}
@@ -155,7 +155,7 @@ public class Credential
 	/**
 	 * @return value of ga_SecretKey
 	 */
-	public final String getga_SecretKey()
+	public final java.lang.String getga_SecretKey()
 	{
 		return getga_SecretKey(getContext());
 	}
@@ -164,16 +164,16 @@ public class Credential
 	 * @param context
 	 * @return value of ga_SecretKey
 	 */
-	public final String getga_SecretKey(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getga_SecretKey(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.ga_SecretKey.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.ga_SecretKey.toString());
 	}
 
 	/**
 	 * Set value of ga_SecretKey
 	 * @param ga_secretkey
 	 */
-	public final void setga_SecretKey(String ga_secretkey)
+	public final void setga_SecretKey(java.lang.String ga_secretkey)
 	{
 		setga_SecretKey(getContext(), ga_secretkey);
 	}
@@ -183,7 +183,7 @@ public class Credential
 	 * @param context
 	 * @param ga_secretkey
 	 */
-	public final void setga_SecretKey(com.mendix.systemwideinterfaces.core.IContext context, String ga_secretkey)
+	public final void setga_SecretKey(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String ga_secretkey)
 	{
 		getMendixObject().setValue(context, MemberNames.ga_SecretKey.toString(), ga_secretkey);
 	}
@@ -204,7 +204,7 @@ public class Credential
 		return context;
 	}
 
-	@Override
+	@java.lang.Override
 	public boolean equals(Object obj)
 	{
 		if (obj == this)
@@ -218,7 +218,7 @@ public class Credential
 		return false;
 	}
 
-	@Override
+	@java.lang.Override
 	public int hashCode()
 	{
 		return getMendixObject().hashCode();
@@ -236,7 +236,7 @@ public class Credential
 	 * @return String GUID from this object, format: ID_0000000000
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
-	@Deprecated
+	@java.lang.Deprecated
 	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
