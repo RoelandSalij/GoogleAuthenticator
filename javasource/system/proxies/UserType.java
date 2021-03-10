@@ -4,15 +4,14 @@
 
 package system.proxies;
 
-public enum DeviceType
+public enum UserType
 {
-	Phone(new java.lang.String[][] { new java.lang.String[] { "en_US", "Phone" }, new java.lang.String[] { "nl_NL", "Phone" } }),
-	Tablet(new java.lang.String[][] { new java.lang.String[] { "en_US", "Tablet" }, new java.lang.String[] { "nl_NL", "Tablet" } }),
-	Desktop(new java.lang.String[][] { new java.lang.String[] { "en_US", "Desktop" }, new java.lang.String[] { "nl_NL", "Desktop" } });
+	Internal(new java.lang.String[][] { new java.lang.String[] { "en_US", "Internal" }, new java.lang.String[] { "nl_NL", "Intern" } }),
+	External(new java.lang.String[][] { new java.lang.String[] { "en_US", "External" }, new java.lang.String[] { "nl_NL", "Extern" } });
 
 	private java.util.Map<java.lang.String, java.lang.String> captions;
 
-	private DeviceType(java.lang.String[][] captionStrings)
+	private UserType(java.lang.String[][] captionStrings)
 	{
 		this.captions = new java.util.HashMap<java.lang.String, java.lang.String>();
 		for (java.lang.String[] captionString : captionStrings)

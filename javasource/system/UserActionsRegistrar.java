@@ -1,46 +1,14 @@
 package system;
 
-import org.osgi.service.event.Event;
-import org.osgi.service.event.EventHandler;
+import com.mendix.core.actionmanagement.IActionRegistrator;
 
-import aQute.bnd.annotation.component.Component;
-import aQute.bnd.annotation.component.Reference;
-
-import com.mendix.core.Core;
-import com.mendix.core.component.LocalComponent;
-import com.mendix.core.component.MxRuntime;
-import com.mendix.integration.Integration;
-
-@Component(immediate = true, properties = {"event.topics:String=com/mendix/events/model/loaded"})
-public class UserActionsRegistrar implements EventHandler
+public class UserActionsRegistrar
 {
-	private MxRuntime mxRuntime;
-	private LocalComponent component;
-	private Integration integration;
-	
-	@Reference
-	public void setMxRuntime(MxRuntime runtime)
-	{
-		mxRuntime = runtime;
-		mxRuntime.bundleComponentLoaded();
-	}
-	
-	@Reference
-	public void setIntegration(Integration integration)
-	{
-		this.integration = integration;
-	}
-	
-	@Override
-	public void handleEvent(Event event)
-	{
-		if (event.getTopic().equals(com.mendix.core.event.EventConstants.ModelLoadedTopic()))        
-		{
-			component = mxRuntime.getMainComponent();
-			Core.initialize(component, integration);   
-			component.actionRegistry().registerUserAction(googleauthenticator.actions.CreateCredentials.class);
-			component.actionRegistry().registerUserAction(googleauthenticator.actions.IsCodeValid.class);
-			component.actionRegistry().registerUserAction(system.actions.VerifyPassword.class);
-		}
-	}
+  public void registerActions(IActionRegistrator registrator)
+  {
+    registrator.bundleComponentLoaded();
+    registrator.registerUserAction(googleauthenticator.actions.CreateCredentials.class);
+    registrator.registerUserAction(googleauthenticator.actions.IsCodeValid.class);
+    registrator.registerUserAction(system.actions.VerifyPassword.class);
+  }
 }

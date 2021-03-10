@@ -30,7 +30,7 @@ public class ValidityCheck
 			metaName = s;
 		}
 
-		@Override
+		@java.lang.Override
 		public java.lang.String toString()
 		{
 			return metaName;
@@ -56,7 +56,7 @@ public class ValidityCheck
 	/**
 	 * @deprecated Use 'ValidityCheck.load(IContext, IMendixIdentifier)' instead.
 	 */
-	@Deprecated
+	@java.lang.Deprecated
 	public static test.proxies.ValidityCheck initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return test.proxies.ValidityCheck.load(context, mendixIdentifier);
@@ -64,7 +64,7 @@ public class ValidityCheck
 
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
-	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
+	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
 	 */
 	public static test.proxies.ValidityCheck initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -111,7 +111,7 @@ public class ValidityCheck
 	/**
 	 * @return value of SecretKey
 	 */
-	public final String getSecretKey()
+	public final java.lang.String getSecretKey()
 	{
 		return getSecretKey(getContext());
 	}
@@ -120,16 +120,16 @@ public class ValidityCheck
 	 * @param context
 	 * @return value of SecretKey
 	 */
-	public final String getSecretKey(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getSecretKey(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.SecretKey.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.SecretKey.toString());
 	}
 
 	/**
 	 * Set value of SecretKey
 	 * @param secretkey
 	 */
-	public final void setSecretKey(String secretkey)
+	public final void setSecretKey(java.lang.String secretkey)
 	{
 		setSecretKey(getContext(), secretkey);
 	}
@@ -139,7 +139,7 @@ public class ValidityCheck
 	 * @param context
 	 * @param secretkey
 	 */
-	public final void setSecretKey(com.mendix.systemwideinterfaces.core.IContext context, String secretkey)
+	public final void setSecretKey(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String secretkey)
 	{
 		getMendixObject().setValue(context, MemberNames.SecretKey.toString(), secretkey);
 	}
@@ -147,7 +147,7 @@ public class ValidityCheck
 	/**
 	 * @return value of Validation_Code
 	 */
-	public final String getValidation_Code()
+	public final java.lang.String getValidation_Code()
 	{
 		return getValidation_Code(getContext());
 	}
@@ -156,16 +156,16 @@ public class ValidityCheck
 	 * @param context
 	 * @return value of Validation_Code
 	 */
-	public final String getValidation_Code(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getValidation_Code(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Validation_Code.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Validation_Code.toString());
 	}
 
 	/**
 	 * Set value of Validation_Code
 	 * @param validation_code
 	 */
-	public final void setValidation_Code(String validation_code)
+	public final void setValidation_Code(java.lang.String validation_code)
 	{
 		setValidation_Code(getContext(), validation_code);
 	}
@@ -175,7 +175,7 @@ public class ValidityCheck
 	 * @param context
 	 * @param validation_code
 	 */
-	public final void setValidation_Code(com.mendix.systemwideinterfaces.core.IContext context, String validation_code)
+	public final void setValidation_Code(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String validation_code)
 	{
 		getMendixObject().setValue(context, MemberNames.Validation_Code.toString(), validation_code);
 	}
@@ -196,7 +196,7 @@ public class ValidityCheck
 		return context;
 	}
 
-	@Override
+	@java.lang.Override
 	public boolean equals(Object obj)
 	{
 		if (obj == this)
@@ -210,7 +210,7 @@ public class ValidityCheck
 		return false;
 	}
 
-	@Override
+	@java.lang.Override
 	public int hashCode()
 	{
 		return getMendixObject().hashCode();
@@ -228,7 +228,7 @@ public class ValidityCheck
 	 * @return String GUID from this object, format: ID_0000000000
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
-	@Deprecated
+	@java.lang.Deprecated
 	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
