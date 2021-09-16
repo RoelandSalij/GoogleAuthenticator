@@ -8,3 +8,6 @@ deployment
 .settings/
 .gradle/
 GPUCache/
+/target/
+/javasource/system/
+/releases/
