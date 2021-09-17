@@ -95,7 +95,7 @@
 	</build>
 	<properties>
 		<mendixInstallDir>C:\Program Files\Mendix</mendixInstallDir>
-		<mendixVersion>8.12.5.11364</mendixVersion>
+		<mendixVersion>9.3.0.22930</mendixVersion>
 	</properties>
 	<dependencies>
 		<dependency>
