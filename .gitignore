@@ -11,3 +11,16 @@ GPUCache/
 /target/
 /javasource/system/
 /releases/
+/*.launch
+/deployment/
+/packages/
+/.mendix-cache/
+/.classpath
+/.project
+/googleauthenticator.mpr.bak
+/googleauthenticator.mpr.lock
+/modeler-merge-marker
+/project-settings.user.json
+/javasource/*/proxies/
+/**/node_modules/
+!/javascriptsource/**/node_modules/

@@ -9,23 +9,23 @@ This connector enables you to generate a secret key and a otp authentication URL
  
 ### Create credentials
  
- - Create a 'credentials' entity which contains or is associated with a user to store the secret key. Don't forget to set your entity access rules appropriately! Only the business logic of your app should be able to read the secret key. 
+ - Create a 'credentials' entity which contains or is associated with a user to store the secret key. This entity should contain a 'ga_SecretKey' (String) attribute. Don't forget to set your entity access rules appropriately! Only the business logic of your app should be able to read the secret key.
 
- - Use a QR code viewer from the Mendix App Store to view the generate otp authentication URL.
+ - A QR code viewer from the Mendix Marketplace is a nice way to display the generated One Time Password authentication URL.
 
- - Create a microflow which receives your 'credentials' entity and passes it as a parameter to the 'Google Authenticator Connector - Create user credentials' action. The action only changes the 'ga_SecretKey' attribute in your entity so you need to commit the entity yourself. (This way you're free in how you take care of your entities and storing of objects). 
+  - Create a microflow which takes your 'credentials' entity object as a parameter and passes it as a parameter to the 'Google Authenticator Connector - Create user credentials' action. The action only changes the 'ga_SecretKey' attribute in your entity so you need to commit the entity yourself. (This way you're free in how you take care of your entities and storing of objects). 
  
  - The 'Google Authenticator Connector - Create user credentials' also requires a username and the name of your application(issuer). These values will be reflected in Googles 'Google Authenticator' app on the device of the user, so the user knows which code belongs to an application.
  
- - Create a page which shows the otp authentication URL as a QR-code to your user. You can use the ImageViewer widget from the App Store for this, for example. It's recommended to show the QR code to the user just once and to not store the value in the database.
+ - Create a page which shows the otp authentication URL as a QR-code to your user. You can use the QR Code Viewer in the Mendix Marketplace for this, for example. It's recommended to show the QR code to the user just once and to not store the value in the database.
   
 ![Create credentials][1]
 
 ### Validate code
 
-- Create a page in your applications where the user can fill in the code which is generated on the device of the user. 
+- Create a page in your application where the user can fill in the code which is generated on the device of the user. 
 
-- Pass this code to the 'Google Authenticator Connector - Check validation code' action together with the secretkey stored with the user. (The secret key is available in the 'Credentials' entity which is described under 'Create Credentials' above.)
+- Pass this code to a microflow that contains the 'Google Authenticator Connector - Check validation code' action together with the secretkey stored with the user. (The secret key is available in the 'Credentials' entity which is described under 'Create Credentials' above.)
 
 - The result of this authentication (boolean) can be used in any way you like.
 
@@ -42,6 +42,8 @@ The GitHub project of this module contains a working example.
 - googleauth-1.5.0.jar
 - commons-codec-1.15.jar
 - httpclient-4.5.13.jar
+- httpcore-4.4.13.jar
+- commons-logging-1.2.jar
 
 ## Collaboration on this connector
 
