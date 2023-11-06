@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mendix.google-authenticator</groupId>
 	<artifactId>GoogleAuthenticator</artifactId>
-	<version>2.2.0</version>
+	<version>2.3.0</version>
 	<name>Google Authenticator</name>
 	<build>
 		<outputDirectory>deployment/run/bin</outputDirectory>
@@ -22,8 +22,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -95,7 +95,7 @@
 	</build>
 	<properties>
 		<mendixInstallDir>C:\Program Files\Mendix</mendixInstallDir>
-		<mendixVersion>9.3.0.22930</mendixVersion>
+		<mendixVersion>9.24.2.6130</mendixVersion>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -116,7 +116,7 @@
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>1.15</version>
+			<version>1.16.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.warrenstrange/googleauth -->
 		<dependency>

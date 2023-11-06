@@ -24,3 +24,7 @@ GPUCache/
 /javasource/*/proxies/
 /**/node_modules/
 !/javascriptsource/**/node_modules/
+/theme-cache/*
+/themesource/*
+/javasource/administration
+/javasource/system

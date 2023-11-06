@@ -40,7 +40,7 @@ The GitHub project of this module contains a working example.
 ## Dependencies
 
 - googleauth-1.5.0.jar
-- commons-codec-1.15.jar
+- commons-codec-1.16.jar
 - httpclient-4.5.13.jar
 - httpcore-4.4.13.jar
 - commons-logging-1.2.jar
