@@ -17,14 +17,18 @@ import com.warrenstrange.googleauth.GoogleAuthenticatorConfig.GoogleAuthenticato
 
 public class IsCodeValid extends CustomJavaAction<java.lang.Boolean>
 {
-	private java.lang.String SecretKey;
-	private java.lang.String ValidationCode;
+	private final java.lang.String SecretKey;
+	private final java.lang.String ValidationCode;
 
-	public IsCodeValid(IContext context, java.lang.String SecretKey, java.lang.String ValidationCode)
+	public IsCodeValid(
+		IContext context,
+		java.lang.String _secretKey,
+		java.lang.String _validationCode
+	)
 	{
 		super(context);
-		this.SecretKey = SecretKey;
-		this.ValidationCode = ValidationCode;
+		this.SecretKey = _secretKey;
+		this.ValidationCode = _validationCode;
 	}
 
 	@java.lang.Override
@@ -37,7 +41,13 @@ public class IsCodeValid extends CustomJavaAction<java.lang.Boolean>
                         .setWindowSize(1);
         GoogleAuthenticator ga = new GoogleAuthenticator(gacb.build());
 
-        int validationCodeNr = Integer.parseInt(ValidationCode.replace(" ", ""));
+        String normalizedCode = ValidationCode.replace(" ", "");
+        
+        if (!normalizedCode.matches("\\d{6}")) {
+            return false;
+        }
+
+        int validationCodeNr = Integer.parseInt(normalizedCode);
         
         return ga.authorize(this.SecretKey, validationCodeNr);
 

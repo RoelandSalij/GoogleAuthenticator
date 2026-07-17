@@ -10,14 +10,11 @@
 package googleauthenticator.actions;
 
 import java.net.URI;
-import java.net.URL;
-import java.net.URLEncoder;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.webui.CustomJavaAction;
 import com.warrenstrange.googleauth.GoogleAuthenticator;
 import com.warrenstrange.googleauth.GoogleAuthenticatorKey;
-import com.warrenstrange.googleauth.GoogleAuthenticatorQRGenerator;
 
 /**
  * This action generates a secret key and the URL which can be represented with a QR code in the Google Authenticator app.
@@ -36,16 +33,21 @@ import com.warrenstrange.googleauth.GoogleAuthenticatorQRGenerator;
  */
 public class CreateCredentials extends CustomJavaAction<java.lang.String>
 {
-	private java.lang.String Issuer;
-	private java.lang.String UserName;
-	private IMendixObject CredentialsToSet;
+	private final java.lang.String Issuer;
+	private final java.lang.String UserName;
+	private final IMendixObject CredentialsToSet;
 
-	public CreateCredentials(IContext context, java.lang.String Issuer, java.lang.String UserName, IMendixObject CredentialsToSet)
+	public CreateCredentials(
+		IContext context,
+		java.lang.String _issuer,
+		java.lang.String _userName,
+		IMendixObject _credentialsToSet
+	)
 	{
 		super(context);
-		this.Issuer = Issuer;
-		this.UserName = UserName;
-		this.CredentialsToSet = CredentialsToSet;
+		this.Issuer = _issuer;
+		this.UserName = _userName;
+		this.CredentialsToSet = _credentialsToSet;
 	}
 
 	@java.lang.Override
