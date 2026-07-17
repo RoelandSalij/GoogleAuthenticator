@@ -10,6 +10,7 @@
 package googleauthenticator.actions;
 
 import java.util.concurrent.TimeUnit;
+import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.warrenstrange.googleauth.GoogleAuthenticator;
 import com.warrenstrange.googleauth.GoogleAuthenticatorConfig.GoogleAuthenticatorConfigBuilder;
@@ -69,6 +70,9 @@ public class IsCodeValid extends UserAction<java.lang.Boolean>
                 .setTimeStepSizeInMillis(TimeUnit.SECONDS.toMillis(30))
                 .setWindowSize(windowSize);
 
+        Core.getLogger("GoogleAuthenticator")
+        .info("WindowSize = " + windowSize);
+        
         GoogleAuthenticator authenticator =
             new GoogleAuthenticator(configBuilder.build());
 
