@@ -27,6 +27,8 @@ This connector enables you to generate a secret key and a otp authentication URL
 
 - Pass this code to a microflow that contains the 'Google Authenticator Connector - Check validation code' action together with the secretkey stored with the user. (The secret key is available in the 'Credentials' entity which is described under 'Create Credentials' above.)
 
+- Window size (optional) Defines the number of 30-second time windows considered when validating a TOTP code. If empty, the module uses a window size of 1, accepting only the current time window. Use 3 to allow additional tolerance for clock differences and codes entered close to expiration.
+
 - The result of this authentication (boolean) can be used in any way you like.
 
 - Since TOTP passwords are time-based, it is essential that the clock of both the server and the client are synchronised within the tolerance used by the library (30 seconds by default).
@@ -37,13 +39,10 @@ This connector enables you to generate a secret key and a otp authentication URL
 ## Example
 The GitHub project of this module contains a working example.
 
-## Dependencies
+## Managed Dependencies
 
 - googleauth-1.5.0.jar
-- commons-codec-1.16.jar
-- httpclient-4.5.13.jar
-- httpcore-4.4.13.jar
-- commons-logging-1.2.jar
+
 
 ## Collaboration on this connector
 

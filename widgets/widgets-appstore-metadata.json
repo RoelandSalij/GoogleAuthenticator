@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "widgets": [
+    {
+      "sha-256": "1d79d93425d0fa95e36ce3f5d11813bcf98cb9c798aa31cad4a86f3b0b9f91db",
+      "name": "QRCodeWidget",
+      "version": "1.1.0",
+      "appStoreVersionGuid": "a49fc78e-f545-45a4-87d2-0dee28b29da6"
+    }
+  ]
+}
