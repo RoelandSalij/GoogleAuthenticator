@@ -69,9 +69,6 @@ public class IsCodeValid extends UserAction<java.lang.Boolean>
             new GoogleAuthenticatorConfigBuilder()
                 .setTimeStepSizeInMillis(TimeUnit.SECONDS.toMillis(30))
                 .setWindowSize(windowSize);
-
-        Core.getLogger("GoogleAuthenticator")
-        .info("WindowSize = " + windowSize);
         
         GoogleAuthenticator authenticator =
             new GoogleAuthenticator(configBuilder.build());
