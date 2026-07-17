@@ -11,11 +11,11 @@ package googleauthenticator.actions;
 
 import java.util.concurrent.TimeUnit;
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import com.warrenstrange.googleauth.GoogleAuthenticator;
 import com.warrenstrange.googleauth.GoogleAuthenticatorConfig.GoogleAuthenticatorConfigBuilder;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
-public class IsCodeValid extends CustomJavaAction<java.lang.Boolean>
+public class IsCodeValid extends UserAction<java.lang.Boolean>
 {
 	private final java.lang.String SecretKey;
 	private final java.lang.String ValidationCode;
